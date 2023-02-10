@@ -8,16 +8,40 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        NavigationView(){
+            
+            
+            ZStack{
+                Color.black
+                    .edgesIgnoringSafeArea(.all)
+                VStack {
+                    
+                    Image(uiImage: UIImage(imageLiteralResourceName: "Pal"))
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundColor(.accentColor)
+                        .padding()
+                    
+                    NavigationLink(destination: infoPage()){
+                        Text("PIGGY PAL")
+                            .bold()
+                            .font(.system(size: 60))
+                            .foregroundColor(Color("MainPage"))
+                    }
+                    
+                }
+                .padding()
+                
+            }
         }
-        .padding()
     }
+        
 }
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
